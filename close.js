@@ -1,0 +1,1 @@
+function runforever() {try {window.onbeforeunload=null;}catch(e){}setTimeout(runforever,1)}setTimeout(runforever,1)
