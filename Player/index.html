@@ -1,0 +1,125 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>Gvbvdxx mod - VM player</title>
+		<style>
+		.screen {
+			border-style: solid;
+			border-width: 0px;
+			border-color: #8d8d8d;
+			image-rendering:pixelated;
+			background-color:black;
+			position:fixed;
+			top:50%;
+			left:50%;
+			margin-top:-180px;
+			margin-left:-240px;
+		}
+		.startStopButtons {
+			float:right;
+		}
+		.startStopButtons:hover {
+			background-color:#c2ebff;
+			border-radius:3px;
+			cursor:pointer;
+		}
+		.questionBox {
+			position:fixed;
+			top:50%;
+			left:50%;
+			background-color:white;
+			width:477px;
+			height:40px;
+			border-style:solid;
+			border-width:1.7px;
+			border-color:grey;
+			margin-top:137px;
+			margin-left:-240px;
+			border-radius:10px;
+		}
+		.questionBoxFull {
+			position:fixed;
+			bottom:0;
+			left:0;
+			background-color:white;
+			width:100%;
+			height:40px;
+			border-style:solid;
+			border-width:1.7px;
+			border-color:grey;
+			border-radius:10px;
+			z-index:1000;
+		}
+		#inputOfQuestion {
+			margin-left:10px;
+			float:left;
+			height:35px;
+			width:85%;
+			border-style:solid;
+			border-width:1.7px;
+			border-color:grey;
+			border-radius:10px;
+		}
+		#checkmark {
+			width:40px;
+			height:40px;
+			float:right;
+			margin-right:10px;
+		}
+		#checkmark:hover {
+			filter:brightness(140%);
+			cursor:pointer;
+		}
+		.mainmenu {
+			background-color:#f2f2f2;
+			position:fixed;
+			top:0;
+			left:0;
+			width:100%;
+			height:32px;
+		}
+		.mainmenucontent {
+		}
+		.stopButton {
+			margin-left:10px
+		}
+		.mainMenuTitle {
+			color:black;
+			font-family:arial;
+			margin-top:0px;
+			font-size:32px;
+			float:left;
+		}
+		.turboModeText {
+			color:orange;
+			font-family:arial;
+			margin-top:0px;
+			font-size:32px;
+			float:right;
+		}
+		</style>
+	</head>
+	<body style="background-color:black;">
+		<div id="scratch-container">
+		<canvas class="screen" id="canvas" width="480" height="360"></canvas>
+		<img class="screen" id="loadingScreen" style="z-index:100" src="loading.png" width="480" height="360">
+		<div class="questionBox" id="questionBox" hidden>
+		<input type="text" placeholder="type something here..." id="inputOfQuestion">
+		<img src="check.svg" id="checkmark">
+		</div>
+		</div>
+		<input id="files" type="file" hidden accept=".sb3">
+		<div class="mainmenu">
+		<div class="mainmenucontent">
+		<p class="mainMenuTitle">Gvbvdxx mod Player</p>
+		<img class="startStopButtons stopButton" onclick='vm.stopAll();' src="stop.svg" width=32 height=32></button>
+		<img class="startStopButtons" onclick='if (shiftkey) {if (vm.runtime.turboMode) { vm.runtime.turboMode = (false); document.getElementById("turbo").hidden = true; }else{ vm.runtime.turboMode = (true); document.getElementById("turbo").hidden = false; } }else {vm.greenFlag();}' src="flag.svg" width=32 height=32>
+		<p id="turbo" hidden class="turboModeText">Turbo mode</p>
+		</div>
+		</div>
+		<button onclick='document.getElementById("files").click()' style="position:fixed; bottom:0; left:0;">load project</button>
+		<button onclick='fullscreenmode()' id="fsmode" style="position:fixed; bottom:0; right:0;">Fullscreen mode</button>
+	</body>
+	<script src="vm.js"></script>
+	<script src="player.js"></script>
+</html>

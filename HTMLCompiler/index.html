@@ -1,0 +1,89 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>GvbvdxxMod2HTML</title>
+	</head>
+	<body style="background-color:black;">
+		<script src="jszip.min.js"></script>
+		<center>
+			<h1 style="font-family:arial; color:white;">GvbvdxxMod2HTML</h1>
+			<p style="font-family:arial; color:white;">Convert .sb3 projects into .HTML!</p>
+			<div style="border-color:white; border-style:solid; width:100%; height:autio;">
+				<center>
+					<p style="font-family:arial; color:white;">
+						Options:
+						<br></br><br></br>
+						
+						<!--Project options-->
+						<h1 style="font-family:arial; color:white;">Project options:</h1>
+						<label style="font-family:arial; color:white;" for="fileselect">Project File:</label>
+						<input style="background-color:white;" type="file" id="fileselect"><br>
+						<br>
+						<label style="font-family:arial; color:white;" for="icon">Favicon File:</label>
+						<input style="background-color:white;" type="file" id="icon"><br>
+						<p style="font-family:arial; color:white;">
+						A favicon is an icon on the tab,
+						changing it will change change the tab icon.
+						</p>
+						<label style="font-family:arial; color:white;" for="title" value="My Project">Title (Tabs Title):</label>
+						<input type="text" id="title"><br>
+						
+						<!--Display options-->
+						<h1 style="font-family:arial; color:white;">Display options:</h1>
+						<label style="font-family:arial; color:white;" for="nostrech">Keep aspect ratio (do not strech screen):</label>
+						<input type="checkbox" id="nostrech" checked><br>
+						<label style="font-family:arial; color:white;" for="username">Username:</label>
+						<input type="text" id="username" checked><br><br>
+						<label style="font-family:arial; color:white;" for="quality">Screen quality:</label>
+						<select id="quality">
+							<option value="hd">HD</option>
+							<option value="pixelated" selected>Pixelated</option>
+						</select><br>
+						<p style="font-family:arial; color:white;">
+						HD is recommended for stuff with vector graphics.<br>
+						Pixelated is recommended for pixelated stuff.<br>
+						You must have Keep aspect ratio checked for this to work.
+						</p>
+						
+						<!--Startup options-->
+						<h1 style="font-family:arial; color:white;">Startup options:</h1>
+						<label style="font-family:arial; color:white;" for="clicktostart">Click to start:</label>
+						<input type="checkbox" id="clicktostart" checked><br>
+						<p style="font-family:arial; color:white;">
+						Notice:<br>
+						browsers do not let pages play audio until the page has been interacted with,<br>
+						if your making animatons and converting them here, you should keep this enabled.
+						</p><br>
+						<label style="font-family:arial; color:white;" for="autoturbo">Enable turbomode on load:</label>
+						<input type="checkbox" id="autoturbo"><br>
+						<label style="font-family:arial; color:white;" for="compadmode">30fps Mode:</label>
+						<input type="checkbox" id="compadmode" checked>
+					</p>
+					<h1 style="font-family:arial; color:white;">NOTICE:</h1>
+					<p style="font-family:arial; color:white;">
+					You can only run this on localhosts, websites and electron apps,<br>
+					i say create a github account, then use github pages to do so.<br>
+					go <a href="https://attacomsian.com/blog/local-web-server" target="_blank">here</a> to host a free localhost server.
+					this is because the page is looking for files by requesting for them.<br>
+					but because of an security reason you cant read from the drive,<br>
+					for saftey reasons. you can only do this with electron, or localhosts.
+					</p>
+				</center>
+			</div>
+		</center>
+		<button style="cursor:pointer;" onclick="startCompile();">To HTML!!</button>
+		<div style="
+			width:100%;
+			height:500px;
+			resize:vertical;
+			background-color:grey;
+			overflow-y:auto;
+			color:darkgrey;
+			font-family:arial;
+			font-weight:bold;
+		"id="console">
+				
+		</div>
+		<script src="compiler.js"></script>
+	</body>
+</html>

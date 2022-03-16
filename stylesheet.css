@@ -1,0 +1,29 @@
+html { 
+	background-color:hsla(215, 100%, 95%, 1);
+	font-family:Arial;
+}
+.menubar {
+	background-color:rgb(255, 121, 77);
+	height:48px;
+	width:100%;
+	position:fixed;
+	top:0;
+	left:0;
+}
+.menuSelector {
+	margin-top:0px;
+	margin-left:12px;
+	font-weight:bold;
+	color:white;
+	height:48px;
+	float:left;
+	cursor:pointer;
+}
+.menuSelector:hover {
+	background-color:hsla(0, 0%, 0%, 0.15);
+}
+.menuImg {
+	height: 1.6rem;
+	margin-top:0.7rem;
+	float:left;
+}
